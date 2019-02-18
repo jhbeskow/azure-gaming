@@ -66,14 +66,14 @@
         }
     },
     "variables": {
-        "nicName": "CloudGamingNic",
+        "nicName": "GraphicServerNic",
         "addressPrefix": "10.0.0.0/16",
         "subnetName": "Subnet",
         "subnetPrefix": "10.0.0.0/24",
         "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]",
-        "vmName": "CloudGaming",
-        "virtualNetworkName": "CloudGamingVNET",
-        "publicIPAddressName": "CloudGamingsPublicIP",
+        "vmName": "GraphicServer",
+        "virtualNetworkName": "GraphicServerVNET",
+        "publicIPAddressName": "GraphicServersPublicIP",
         "dnsNameForPublicIP": "[concat('cgp', uniqueString(resourceGroup().id, deployment().name))]",
         "scriptFolder": ".",
         "scriptFileName": "setup.ps1",

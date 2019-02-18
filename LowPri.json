@@ -30,14 +30,14 @@
         }
     },
     "variables": {
-        "nicName": "CloudGamingNic",
+        "nicName": "GraphicServerNic",
         "addressPrefix": "10.0.0.0/16",
         "subnetName": "Subnet",
         "subnetPrefix": "10.0.0.0/24",
         "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]",
-        "vmssName": "CloudGaming",
-        "virtualNetworkName": "CloudGamingVNET",
-        "publicIPAddressName": "CloudGamingsPublicIP",
+        "vmssName": "GraphicServer",
+        "virtualNetworkName": "GraphicServerVNET",
+        "publicIPAddressName": "GraphicServersPublicIP",
         "publicIPAddressID": "[resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName'))]",
         "dnsNameForPublicIP": "[concat('cgp', uniqueString(resourceGroup().id, deployment().name))]",
         "loadBalancerName": "[concat(variables('vmssName'), 'lb')]",
@@ -146,7 +146,7 @@
                 },
                 "virtualMachineProfile": {
                     "priority": "Low",
-                    "evictionPolicy": "delete",
+                    "evictionPolicy": "deallocate",
                     "storageProfile": {
                         "osDisk": {
                             "caching": "ReadWrite",
